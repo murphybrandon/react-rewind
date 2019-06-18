@@ -13,19 +13,22 @@ export default function Events(props) {
     eventTimes,
   } = props;
 
+  const eventsToRender = filteredData.map((e, i) => (
+    <EventCreator
+      selectedEvent={activeEventId === e.id ? 'true' : 'false'}
+      action={e.action.type}
+      key={`${e.id}event`}
+      index={i}
+      id={e.id}
+      addAction={props.addAction}
+      eventTimes={eventTimes}
+    />
+  ));
   return (
-    <EventsWrapper>
-      {filteredData.map((e, i) => (
-        <EventCreator
-          selectedEvent={activeEventId === e.id ? 'true' : 'false'}
-          action={e.action.type}
-          key={i}
-          index={i}
-          id={e.id}
-          addAction={props.addAction}
-          eventTimes={eventTimes}
-        />
-      ))}
-    </EventsWrapper>
+    <>
+      <EventsWrapper>
+        {eventsToRender}
+      </EventsWrapper>
+    </>
   );
 }

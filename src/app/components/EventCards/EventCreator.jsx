@@ -35,6 +35,5 @@ export default function EventCreator(props) {
       {action}
       <EventTimeDiv id={id} selectedEvent={selectedEvent}>{displayTime}</EventTimeDiv>
     </EventCard>
-
   );
 }

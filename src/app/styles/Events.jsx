@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 // the entire events display wrapper
 export const EventsWrapper = styled.div`
-  height: -webkit-fill-available;
+  /* height: -webkit-fill-available; */
   overflow: auto;
 `;
 
