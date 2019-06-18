@@ -4,16 +4,21 @@ import ReactJson from 'react-json-view';
 // styled components
 import { DetailsWrapper } from '../../../styles/Details.jsx';
 
-export default function InitialDisplay({ action }) {
-  // renders action information
+const InitialDisplay = ({ action }) => {
+  const details = action ? (
+    <ReactJson
+      theme="threezerotwofour"
+      style={{ backgroundColor: 'transparent' }}
+      displayDataTypes={false}
+      src={action}
+    />
+  )
+    : 'press record to start time travel';
   return (
     <DetailsWrapper>
-      {<ReactJson
-        theme="threezerotwofour"
-        style={{ backgroundColor: 'transparent' }}
-        displayDataTypes={false}
-        src={action}
-      /> || 'select an event'}
+      {details}
     </DetailsWrapper>
   );
-}
+};
+
+export default InitialDisplay;

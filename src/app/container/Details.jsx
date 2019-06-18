@@ -26,7 +26,7 @@ export default function Details(props) {
     <Router>
       <>
         <DetailsNav />
-        {isClicked === false ? <InitalDisplay action={action} /> : null }
+        {isClicked === false ? <InitalDisplay isClicked={isClicked} action={action} /> : null }
         {/* routing components and rendering them with props */}
         <Route
           exact
