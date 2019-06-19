@@ -6,8 +6,10 @@
   "scripts": {
     "lint": "eslint \"*/**/*.{js,jsx}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-dev": "cd src/app/ && ../../node_modules/webpack-cli/bin/cli.js --mode development --config ./webpack.config.dev.js",
+    "build-prod": "cd src/app/ && ../../node_modules/webpack-cli/bin/cli.js --mode production --config ./webpack.config.prod.js",
     "bundle_bg": "browserify src/browser/chrome/background.js -o src/browser/chrome/devtools_bundle/bg_bundle.js",
-    "build": "npm run bundle_bg & npm run webpack --prefix ./src/app",
+    "build_bg": "npm run bundle_bg & npm run webpack --prefix ./src/app",
     "install_dep": "npm install & npm install --prefix ./src/app"
   },
   "repository": {
@@ -21,7 +23,9 @@
     "browserify": "^16.2.3",
     "eslint": "^5.14.1",
     "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-plugin-react": "^7.12.4",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
   },
   "dependencies": {
     "escodegen": "^1.11.1",
